@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "973024065073",
+    "project_id": "joalarm-6a968",
+    "storage_bucket": "joalarm-6a968.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973024065073:android:72298cf7737fe9abb34710",
+        "android_client_info": {
+          "package_name": "com.AustinCap.Joalarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973024065073-1aft5j9cvsaq7q7jga4v5dt2e5ql4fa1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.AustinCap.Joalarm",
+            "certificate_hash": "3d284dd0b425417a4c0f2ef99ef63f18cac66508"
+          }
+        },
+        {
+          "client_id": "973024065073-ndaqrditv51krv19dietkhbpcm180ich.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1-cXNzG59Xs2SkIkkkFHfP4Ed8fLx8b4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973024065073-ndaqrditv51krv19dietkhbpcm180ich.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

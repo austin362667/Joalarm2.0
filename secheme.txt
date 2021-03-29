@@ -1,0 +1,29 @@
+CREATE TABLE "USER" (
+  id uuid DEFAULT uuid_generate_v4 () PRIMARY KEY,
+  name TEXT NOT NULL,
+  password TEXT NOT NULL,
+  location geography,
+  token TEXT,
+  image TEXT,
+  cnt numeric DEFAULT 0
+);
+
+insert into "USER" (name, location) values ('Austin Lin', 'SRID=4326;POINT(121.2561563 24.9766524)') RETURNING id; //daily cnt
+UPDATE "USER" SET location = 'SRID=4326;POINT(0 0)' WHERE id = '2';
+SELECT * FROM "USER" u, "FOLLOW" f WHERE ST_DWithin ( u.location, geography (ST_Point(${long}, ${lat})), 10000) AND '${id}' = f.followee;
+
+CREATE TABLE "FOLLOW" (
+  id uuid DEFAULT uuid_generate_v4 () PRIMARY KEY,
+  follower uuid,
+  followee uuid,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+SELECT * FROM "USER" u, "FOLLOW" f WHERE ST_DWithin ( u.location, geography (ST_Point(0, 0)), 10000) AND u.id AS "String" = f.followee;
+
+
+SELECT ST_Distance(SELECT location FROM "USER" WHERE id = '${follower}', SELECT location FROM "USER" WHERE id = '${followee}');
+
+SELECT ST_Distance(location, lag(location) over()) from "USER" where id = '${req.params.follower}' or id = '${req.params.followee}';
